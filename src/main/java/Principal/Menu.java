@@ -5,21 +5,16 @@
  */
 package Principal;
 import java.util.*;
+import Personajes.Heroe;
+import Personajes.Bestia;
 public class Menu {
-
- 
     public static void main (String []args){
-        Menu menu = new Menu();
-    }
-           Scanner entrada=new Scanner(System.in);
-    public Menu(){
-        Inicio();
-    }
-    
-    public void Inicio(){
-    System.out.println("++++BIENVENIDO A EL SEÑOR DE LOS ANILLOS+++++");
-    System.out.println("\n");
-    System.out.println("+++++TODO LISTO PARA COMENZAR+++++++++");
+        Heroe heroe=new Heroe();
+        Bestia bestia=new Bestia();
+        Scanner entrada=new Scanner(System.in);
+        System.out.println("++++BIENVENIDO A EL SEÑOR DE LOS ANILLOS+++++");
+        System.out.println("\n");
+        System.out.println("+++++TODO LISTO PARA COMENZAR+++++++++");
     
     int banderaMenu=1;
     do{
@@ -34,9 +29,21 @@ public class Menu {
             case 1:
                 break;
             case 2:
+                System.out.println("    1. Crear Heroe");
+                System.out.println("    2. Crear Bestia");
+                System.out.println("Ingrese el numero de opcion que desea ejecutar");
+                int op=entrada.nextInt();
+                if(op==1){
+                    heroe.crearHeroe();
+                }else if(op==2){
+                    bestia.crearBestia();
+                }else{
+                    System.out.println("Vuelva a intentarlo e ingrese un aopcion valida");
+                }
                 break;
             case 3:
-                Caracteristicas();
+                heroe.CaracteristicasHeroes();
+                bestia.CaracteristicasBestias();
                 break;
             case 4:
                 banderaMenu=0;
@@ -47,25 +54,11 @@ public class Menu {
         
     }
     }while(banderaMenu!=0);
-    }
+  }
+  }
+           
+  
     
-    public void Caracteristicas(){
-        String[] verHeroes={"Elfo","Hobbit","Humano"};
-        int[]verVidaHeroe={250,200,180,};
-        String[]verBestias={"Orco","Trasgo"};
-        int[]verVidaBestia={300,325};
-        
-        System.out.println("-----Tabla de caracteristicas de personajes-----");
+    
+    
 
-        System.out.println("++++CARACTERISTICAS HEROES++++");
-        for(int i=0;i<3;i++){
-            System.out.println("Personaje:"+verHeroes[i]+ " Vida:"+verVidaHeroe[i]);
-        }
-        System.out.println("\n");
-        System.out.println("++++CARACTERISTICAS BESTIAS++++");
-        for(int j=0;j<2;j++){
-            System.out.println("Personaje:"+verBestias[j]+ " Vida:"+verVidaBestia[j]);
-        }
-        System.out.println("\n");
-    }
-}

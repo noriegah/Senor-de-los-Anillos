@@ -1,14 +1,54 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Personajes;
 
-/**
- *
- * @author dell
- */
+package Personajes;
+import java.util.*;
+import Principal.Menu;
+import Juego.Ente;
 public class Bestia {
+    String[]verBestias={"Orco","Trasgo"};
+    int[]verVidaBestia={300,325};
     
+    //Menu menu = new Menu();
+    Scanner entrada=new Scanner(System.in);
+    Ente ente=new Ente();
+    
+    int contadorBestia=1;
+    
+    public void crearBestia(){
+       // menu.CaracteristicasHeroes();
+        System.out.println("Ingrese el numero de ID del tipo de Heroe que desea crear");
+        int opCrear=entrada.nextInt();
+        if (opCrear==1){
+            crearOrco();
+        }else if(opCrear==2){
+            crearDrazgo();
+        }
+    contadorBestia++;
+    }
+    
+    public void crearOrco(){
+        ente.idBestia[contadorBestia]=contadorBestia;
+        System.out.println("Ingrese el Nombre del Nuevo Personaje");
+        ente.nombreBestia[contadorBestia]=entrada.next();
+        System.out.println("Es una Bestia "+ente.bestia);
+        ente.vidaBestia[contadorBestia]=300;
+        ente.muertoBestia[contadorBestia]=false;
+    }
+    
+    public void crearDrazgo(){
+        ente.idBestia[contadorBestia]=contadorBestia;
+        System.out.println("Ingrese el Nombre del Nuevo Personaje");
+        ente.nombreBestia[contadorBestia]=entrada.next();
+        System.out.println("Es una Bestia "+ente.bestia);
+        ente.vidaBestia[contadorBestia]=325;
+        ente.muertoBestia[contadorBestia]=false;
+    }
+    
+    public void CaracteristicasBestias(){
+
+        System.out.println("++++CARACTERISTICAS BESTIAS++++");
+        for(int j=0;j<2;j++){
+            System.out.println("ID: "+j+" Personaje:"+verBestias[j]+ " Vida:"+verVidaBestia[j]);
+        }
+        System.out.println("\n");
+    }
 }
