@@ -11,7 +11,7 @@ public class Bestia {
     Scanner entrada=new Scanner(System.in);
     Ente ente=new Ente();
     
-    int contadorBestia=1;
+    public int contadorBestia=1;
     
     public void crearBestia(){
        // menu.CaracteristicasHeroes();

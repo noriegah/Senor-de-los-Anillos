@@ -7,10 +7,12 @@ package Principal;
 import java.util.*;
 import Personajes.Heroe;
 import Personajes.Bestia;
+import Juego.Juego;
 public class Menu {
     public static void main (String []args){
         Heroe heroe=new Heroe();
         Bestia bestia=new Bestia();
+        Juego juego=new Juego();
         Scanner entrada=new Scanner(System.in);
         System.out.println("++++BIENVENIDO A EL SEÑOR DE LOS ANILLOS+++++");
         System.out.println("\n");
@@ -29,6 +31,7 @@ public class Menu {
             case 1:
                 heroe.mostrarEjercitoHeroes();
                 bestia.mostrarEjercitoBestias();
+                heroe.Batalla1();
                 break;
             case 2:
                 System.out.println("    1. Crear Heroe");
@@ -40,7 +43,7 @@ public class Menu {
                 }else if(op==2){
                     bestia.crearBestia();
                 }else{
-                    System.out.println("Vuelva a intentarlo e ingrese un aopcion valida");
+                    System.out.println("Vuelva a intentarlo e ingrese una opcion valida");
                 }
                 break;
             case 3:

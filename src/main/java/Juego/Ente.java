@@ -1,6 +1,6 @@
 
 package Juego;
-
+import Personajes.Heroe;
 public class Ente {
     public String nombreHeroes[]=new String[50];
     public int resistenciaArmaduraHeroe[]=new int[50];
@@ -17,7 +17,10 @@ public class Ente {
     public String bestia="Õ";
     public String heroe="ß";
     public String muerto="■";
-  
+
+    public Ente() {
+    }
+
 
     
 }
