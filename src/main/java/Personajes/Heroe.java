@@ -15,16 +15,19 @@ public class Heroe{
         int opCrear=entrada.nextInt();
         if (opCrear==1){
             crearElfo();
+            ente.tipoPersonajeHeroe[contadorHeroes]="Elfo";
         }else if(opCrear==2){
             crearHobbit();
+            ente.tipoPersonajeHeroe[contadorHeroes]="Hobbit";
         }else if(opCrear==3){
             crearHumano();
+            ente.tipoPersonajeHeroe[contadorHeroes]="Humano";
         }
     contadorHeroes++;
     }
     
     public void crearElfo(){
-       // ente.idHeroe[contadorHeroes]=contadorHeroes;
+        ente.idHeroe[contadorHeroes]=contadorHeroes;
         System.out.println("Ingrese el Nombre del Nuevo Personaje");
         ente.nombreHeroes[contadorHeroes]=entrada.next();
         System.out.println("Es un Heroe "+ente.heroe);
@@ -58,4 +61,13 @@ public class Heroe{
         }
                 System.out.println("\n");
     }
+     
+     public void mostrarEjercitoHeroes(){
+        System.out.println(" EJERCITO HEROES");
+        for(int i=1;i<contadorHeroes;i++){
+            System.out.println(ente.heroe+"    ID:"+ente.idHeroe[i]+" Nombre:"+ente.nombreHeroes[i]+" Personaje:"+ente.tipoPersonajeHeroe[i]+" Vida:"+ente.vidaHeroe[i]);
+        }
+        entrada.nextLine();
+    }
+     
 }

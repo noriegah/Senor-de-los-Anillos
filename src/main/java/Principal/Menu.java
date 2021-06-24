@@ -27,6 +27,8 @@ public class Menu {
         opMenu=entrada.nextInt();
         switch(opMenu){
             case 1:
+                heroe.mostrarEjercitoHeroes();
+                bestia.mostrarEjercitoBestias();
                 break;
             case 2:
                 System.out.println("    1. Crear Heroe");

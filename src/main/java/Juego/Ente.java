@@ -11,6 +11,8 @@ public class Ente {
     public int resistenciaArmaduraBestai[]=new int[50];
     public int vidaBestia[]=new int[50];
     public int idBestia[]=new int[50];
+    public String tipoPersonajeHeroe[]=new String[50];
+    public String tipoPersonajeBestia[]=new String[50];
     public boolean muertoBestia[]=new boolean[50];
     public String bestia="Õ";
     public String heroe="ß";

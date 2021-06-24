@@ -19,8 +19,10 @@ public class Bestia {
         int opCrear=entrada.nextInt();
         if (opCrear==1){
             crearOrco();
+            ente.tipoPersonajeBestia[contadorBestia]="Orco";
         }else if(opCrear==2){
             crearDrazgo();
+            ente.tipoPersonajeBestia[contadorBestia]="Drazgo";
         }
     contadorBestia++;
     }
@@ -50,5 +52,13 @@ public class Bestia {
             System.out.println("ID: "+j+" Personaje:"+verBestias[j]+ " Vida:"+verVidaBestia[j]);
         }
         System.out.println("\n");
+    }
+    
+    public void mostrarEjercitoBestias(){
+        System.out.println(" EJERCITO BESTIAS");
+        for(int i=1;i<contadorBestia;i++){
+            System.out.println(ente.bestia+"    ID:"+ente.idBestia[i]+" Nombre:"+ente.nombreBestia[i]+" Personaje:"+ente.tipoPersonajeBestia[i]+" Vida:"+ente.vidaBestia[i]);
+        }
+        entrada.nextLine();
     }
 }
